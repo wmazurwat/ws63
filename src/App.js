@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Capture from "./components/Capture";
-import logo from "./logo.svg";
 
 function App() {
   const [file, setFile] = useState();
   const [preview, setPreview] = useState();
   const [text1, setText1] = useState("Text1");
+  const [text2, setText2] = useState("Text2");
   const onFileInputChange = (event) => {
     setFile(event.target.files[0]);
   };
-  const onTextInputChange = (event) => {
+  const onTextInputChange1 = (event) => {
     setText1(event.target.value);
+  };
+  const onTextInputChange2 = (event) => {
+    setText2(event.target.value);
   };
   useEffect(() => {
     if (!file) {
@@ -26,12 +29,15 @@ function App() {
   }, [file]);
   return (
     <div className="App">
+      
       <header className="App-header">
+      <h2> Meme generator</h2>
         {preview && (
-          <Capture img={preview} textTop={"Kiedy nie lubisz Reacta"} textBottom={"ale Jacek wyszkolił cię w jeden księżyc"} />
+          <Capture img={preview} textTop={text1} textBottom={text2} />
         )}
         <input type={"file"} onChange={onFileInputChange} />
-        <input type={"text"} onChange={onTextInputChange} />
+        <input type={"textTop"} onChange={onTextInputChange1} />
+        <input type={"textBottom"} onChange={onTextInputChange2} />
       </header>
     </div>
   );

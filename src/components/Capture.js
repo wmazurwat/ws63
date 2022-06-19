@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from "react";
+import React, { useRef } from "react";
 import html2canvas from "html2canvas";
 const exportAsImage = async (el, imageFileName) => {
   const canvas = await html2canvas(el);
