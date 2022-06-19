@@ -30,8 +30,8 @@ function App() {
   return (
     <div className="App">
       
-      <header className="App-header">
-      <h2> Meme generator</h2>
+      <header className="App-header text-black">
+      <h2 className="text-black"> Meme generator</h2>
         {preview && (
           <Capture img={preview} textTop={text1} textBottom={text2} />
         )}

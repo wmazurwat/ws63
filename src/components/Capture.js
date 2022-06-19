@@ -38,7 +38,7 @@ const Capture = ({ img, textTop, textBottom }) => {
           flexDirection: "column",
         }}
       >
-        <p style={{ zIndex: 1 }}>{textTop}</p>
+        <p className="text-black" style={{ zIndex: 1 }}>{textTop}</p>
         <p style={{ zIndex: 1 }}>{textBottom}</p>
       </div>
       <button onClick={() => exportAsImage(ref.current, "test")}>
